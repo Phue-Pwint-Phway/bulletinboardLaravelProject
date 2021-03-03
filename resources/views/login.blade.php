@@ -11,27 +11,11 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('/js/app.js') }}"></script>
     <link href="{{ asset('/css/login.css') }}" rel="stylesheet">
-    <script src="{{ asset('/js/login.js') }}"></script>
+    {{-- <script src="{{ asset('/js/login.js') }}"></script> --}}
 </head>
 <body>
     <div class="container">
-        @if (count($errors) > 0)
-            <div>
-                <ul>
-                    @foreach ($errors -> all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        @if ($message = Session::get('success'))
-            <div>
-                <button type="button" class="close" data-dismiss="alert">x</button>
-                <strong>{{ $message }}</strong>
-            </div>
-        @endif
-        <form class="" id="form-id" name="loginform" action="{{ url('/import') }}" method="GET" enctype="multipart/form-data">
+        <form class="" id="form-id" name="loginform" action="{{ route('') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-header">
                 <h2 >SCM Bulletion Board</h2>

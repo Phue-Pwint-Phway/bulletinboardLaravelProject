@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main Layout</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <script src="/js/app.js"></script>
-    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+    <script src="{{ asset('/js/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/common_header.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/post_list.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/create_post.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/update_post.css') }}">
 </head>
 <body>
     <div class="container">
         @yield('content')
     </div>
     <div class="footer">
-        <p>Footer</p>
+        <p>@Copyright</p>
     </div>
 </body>
 </html>

@@ -15,6 +15,9 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::latest()->paginate(5);
+        return view('posts.postlist', compact('posts'))
+            ->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -25,7 +28,22 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view ('posts.createpost');
     }
+
+    // public function confirm(Request $request)
+    // {
+    //     // retrun redirect();'posts.confirmpost', compact('post')
+    //     $request->validate([
+    //         'title' => 'required',
+    //         'description' => 'required',
+    //     ]);
+
+    //     Post::create($request->all());
+
+    //     return redirect()->route('posts.confirmpost')
+    //                     ->with('success', 'Surely!');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -36,6 +54,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'title' => 'required|unique:table',
+            'description' => 'required',
+        ]);
+
+        Post::create($request->all());
+
+        return redirect()->route('posts.postlist')
+                        ->with('success', 'Posts created successfully');
+
     }
 
     /**
@@ -58,6 +86,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('posts.updatepost', compact('post'));
     }
 
     /**
@@ -70,6 +99,15 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+        $request->validate([
+            'title' => 'required|unique:table',
+            'description' => 'required',
+        ]);
+
+        $post->update($request->all());
+
+        return redirect()->route('posts.index')
+                        ->with('success', 'Post updated successfully');
     }
 
     /**
@@ -81,5 +119,9 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+        // $post->delete();
+
+        // return redirect()->route('posts.postlist')
+        //                 ->with('success', 'Post deleted successfully');
     }
 }

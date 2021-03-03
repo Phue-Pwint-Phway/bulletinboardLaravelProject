@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login_Page_Design</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('/js/app.js') }}"></script>
-    <link href="{{ asset('/css/update_post.css') }}" rel="stylesheet">
-</head>
-<body>
+@extends('layout')
+@section('content')
     {{-- update-post  --}}
     <div class="container">
-        <form action="">
+        <form action="{{ route('posts.update',$post->id) }}" method="POST">
+            @csrf
+            @method('PUT')
             <div class="row first">
                 <h3>Update Post</h3>
             </div>
@@ -20,7 +13,7 @@
                     <label for="">Title</label>
                 </div>
                 <div class="col-md-10">
-                    <input class="input-title" type="text" name="" id="">
+                    <input class="input-title" type="text" name="title" id="" value="{{ $post->title }}" placeholder="Enter Title">
                 </div>
             </div>
             <div class="row third">
@@ -28,7 +21,8 @@
                     <label for="">Description</label>
                 </div>
                 <div class="col-md-10">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <input class="input-description" type="text" name="description" value="{{ $post->description }}" style="height: 150px">
+                    
                 </div>
             </div>
             <div class="row fouth">
@@ -45,5 +39,4 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+@endsection

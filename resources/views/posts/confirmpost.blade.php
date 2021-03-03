@@ -11,9 +11,8 @@
 <body>
     {{-- create-post-confirm  --}}
     <div class="container">
-        <form action="/confirmpost" method="GET">
-
-
+        <form action="{{ route('user.store') }}" method="POST">
+            @csrf
             <div class="row first">
                 <h3>Create Post Confirmation</h3>
             </div>

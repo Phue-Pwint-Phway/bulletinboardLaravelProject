@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login_Page_Design</title>
-        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('/js/app.js') }}"></script>
-        <link href="{{ asset('/css/create_post.css') }}" rel="stylesheet">
-    </head>
-    <body>
+@extends('layout')
+@section('content')
+    
+
         {{-- create-post  --}}
         <div class="container">
-            <form action="{{ url('/importpost') }}" method="GET" id="form1">
+            <form action="{{ route('posts.store') }}" method="POST" id="form1">
+                @csrf
                 <div class="row first">
                     <h3>Create Post</h3>
                 </div>
@@ -39,6 +33,4 @@
                 </div>
             </form>
         </div>
-    </body>
-</html>
-
+@endsection    

@@ -3,7 +3,7 @@
     <div class="container">
         {{-- common-header --}}
         <div class="header-container">
-            <form action="/common" method="GET">
+            <form action="/common" method="POST">
                 <ul>
                     <li>
                         <h2>SCM Bulletin Board</h2>
@@ -28,7 +28,7 @@
         </div>
         {{-- post-list --}}
         <div class="postlist-container">
-            <form action="/postlist" method="GET">
+            <form action="/postlist" method="POST">
                 <div class="row1">
                     <h3>Post List</h3>
                 </div>
@@ -41,7 +41,7 @@
                             <button>Search</button>
                         </li>
                         <li>
-                            <button type="button" onclick="location.href='{{ ('/createpost') }}'">Add</button>
+                            <button type="button" onclick="location.href='{{ route('posts.create') }}'">Add</button>
                         </li>
                         <li>
                             <button type="button" onclick="location.href='{{ ('/uploadCSV') }}'">Upload</button>
@@ -61,37 +61,29 @@
                             <th>Posted Date</th>
                             <th colspan="2">Action</th>
                         </tr>
+                        @foreach ($posts as $post)
                         <tr>
-                            <td><a href="">Title 1</a></td>
-                            <td>Description 1</td>
-                            <td>User 1</td>
-                            <td>5/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
+                            <td><a href="">{{ $post->title }}</a></td>
+                            <td>{{ $post->description }}</td>
+                            <td>{{ $post->id }}</td>
+                            <td>{{ date('Y-m-d') }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                                    {{-- <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a> --}}
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
+                        @endforeach   
                     </table>
                 </div>
                 <div class="row4">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">4</a></li>
-                          <li class="page-item"><a class="page-link" href="#">5</a></li>
-                          <li class="page-item"><a class="page-link" href="#">6</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        </ul>
-                    </nav>
+                    {!! $posts->links() !!}
                 </div>
             </form>
         </div>
