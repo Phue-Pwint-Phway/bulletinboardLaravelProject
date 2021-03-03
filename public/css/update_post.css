@@ -1,0 +1,26 @@
+/* for update-post */
+.container {
+    margin: 20px 20px 50px 50px;
+}
+.form-check-input {
+    clear: left;
+    height: 1rem;
+    width: calc(1rem + 0.75rem);
+    border-radius: 2rem;
+}
+.row {
+    margin: 20px 0px 0px 0px;
+}
+.container form .fifth button {
+    margin: 0px 0px 0px 75px;
+    padding: 5px 5px 5px 5px;
+    width: 100px;
+    text-align: center;
+}
+.confirm, .update {
+    background-color: #3b5998;
+    color: white;
+}
+.input-title {
+    width: 232px;
+}

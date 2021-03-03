@@ -1,0 +1,36 @@
+/* for login page */
+.contianer {
+    margin: 50px 50px 50px 50px;
+}
+.form-header, .form-body {
+    padding: 10px 50px 10px 50px;
+    border: 1px solid black ;
+}
+.form-body {
+    padding: 5px 50px 100px 50px;
+}
+.one, .two, .three, .four, .five, .six {
+    margin: 10px 0px 10px 0px;
+}
+.label_email, .label_password {
+    width:100px;
+}
+.input_email, .input_password {
+    padding: 2px 2px 2px 2px;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+}
+button {
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    margin: px 0px 0px 0px;
+    width: 100px;
+    text-align: center;
+}
+button:hover {
+    opacity: unset;
+}

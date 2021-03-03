@@ -78,17 +78,6 @@
                             <td>1/10/2019</td>
                             <td><button>Delete</button></td>
                         </tr>
-                        <tr>
-                            <td><a href="">user2</a></td>
-                            <td>user2@gmail.com</td>
-                            <td>user1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>11/1/2020</td>
-                            <td>23/3/2020</td>
-                            <td><button>Delete</button></td>
-                        </tr>
                     </table>
                 </div>
                 <div class="row fouth">

@@ -1,0 +1,24 @@
+/* for create-user */
+.container {
+    margin: 20px 20px 50px 50px;
+}
+.row {
+    margin: 20px 0px 0px 0px;
+}
+.container form .row input, .type-option {
+    width: 250px;
+    height: 30px;
+}
+textarea {
+    width: 250px;
+}
+.container form .row button {
+    margin: 0px 0px 0px 75px;
+    padding: 5px 5px 5px 5px;
+    width: 100px;
+    text-align: center;
+}
+.confirm, .create {
+    background-color: #3b5998;
+    color: white;
+}

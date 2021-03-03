@@ -59,53 +59,13 @@
                             <th>Post Description</th>
                             <th>Posted Use</th>
                             <th>Posted Date</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th colspan="2">Action</th>
                         </tr>
                         <tr>
                             <td><a href="">Title 1</a></td>
                             <td>Description 1</td>
                             <td>User 1</td>
                             <td>5/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title2</a></td>
-                            <td>Description 2</td>
-                            <td>User 1</td>
-                            <td>5/4/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        <tr>
-                            <td><a href="">Title 3</a></td>
-                            <td>Description 3</td>
-                            <td>User 1</td>
-                            <td>4/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 4</a></td>
-                            <td>Description 4</td>
-                            <td>User 2</td>
-                            <td>5/11/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 5</a></td>
-                            <td>Description 5</td>
-                            <td>User 2</td>
-                            <td>9/10/2019</td>
-                            <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Title 6</a></td>
-                            <td>Description 6</td>
-                            <td>User 3</td>
-                            <td>11/12/2019</td>
                             <td><button>Edit</button></td>
                             <td><button>Delete</button></td>
                         </tr>
