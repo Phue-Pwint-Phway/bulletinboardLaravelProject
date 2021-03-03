@@ -1,0 +1,52 @@
+/* for user-list */
+.userlist-container {
+    margin: 20px 0px 0px 0px;
+}
+.first, .second, .third {
+    margin: 0px 0px 0px 0px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+.second ul li input {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 0px;
+    width: 100px;
+    text-align: center;
+}
+.second ul li button {
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 0px;
+    width: 100px;
+    text-align: center;
+}
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+}
+table {
+    border-collapse: collapse;
+}
+.third {
+    margin: 20px 0px 0px 0px;
+}
+.fouth {
+    margin: 20px 0px 0px 100px;
+}
+.fouth nav ul li {
+    margin: 0px 0px 0px 5px;
+}
+.fouth nav ul li a {
+    border: 1px solid black;
+    background-color: #3b5998;
+    color: white;
+    padding: 5px 10px 5px 10px;
+}
