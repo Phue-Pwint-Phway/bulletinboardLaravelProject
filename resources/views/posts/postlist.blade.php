@@ -71,6 +71,7 @@
                                 <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
                             </td>
                             <td>
+                                {{-- delete --}}
                                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                     {{-- <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a> --}}
                                     @csrf

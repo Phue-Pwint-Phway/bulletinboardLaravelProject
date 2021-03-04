@@ -81,6 +81,7 @@
                                 <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
                             </td>
                             <td>
+                                {{-- delete --}}
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                                     {{-- <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a> --}}
                                     @csrf
