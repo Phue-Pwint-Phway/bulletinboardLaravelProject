@@ -9,13 +9,13 @@
                         <h2>SCM Bulletin Board</h2>
                     </li>
                     <li>
-                        <a type="action" href="{{ url('/userlist') }}">Users</a>
+                        <a type="action" href="{{ url('/users') }}">Users</a>
                     </li>
                     <li>
-                        <a type="action" href="{{ url('/createuser') }}">User</a>
+                        <a type="action" href="{{ route('users.create') }}">User</a>
                     </li>
                     <li>
-                        <a type="action" href="{{ url('/postlist') }}">Posts</a>
+                        <a type="action" href="{{ route('posts.index') }}">Posts</a>
                     </li>
                     <li>
                         <label class="loginuser"  for="loginUser">Loginuser Name</label>
@@ -28,7 +28,7 @@
         </div>
         {{-- post-list --}}
         <div class="postlist-container">
-            <form action="/postlist" method="POST">
+            <form action="{{ route('posts.index') }}" method="POST">
                 <div class="row1">
                     <h3>Post List</h3>
                 </div>
@@ -79,7 +79,7 @@
                                 </form>
                             </td>
                         </tr>
-                        @endforeach   
+                        @endforeach
                     </table>
                 </div>
                 <div class="row4">

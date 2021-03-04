@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{ asset('/css/common_header.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/post_list.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/create_post.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/update_post.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/update_post.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/user_list.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create_user.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/update_user.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">

@@ -19,15 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 // post
 Route::resource('posts', 'PostController');
-
-Route::get('/', 'PostController@index')->name('posts.index');
+// Route::get('/', 'PostController@index')->name('posts.index');
 Route::get('/posts', 'PostController@create')->name('posts.create');
 Route::post('/posts', 'PostController@store')->name('posts.store');
-Route::get('/posts/{post}', 'UserController@edit')->name('posts.edit');
-Route::post('/posts/{post}', 'UserController@update')->name('posts.update');
+Route::get('/posts/{post}', 'PostController@edit')->name('posts.edit');
+Route::post('/posts/{post}', 'PostController@update')->name('posts.update');
 
 // Route::post('/posts', 'PostController@confirm')->name('posts.confirm');
 
-
 // user
-Route::resource('user', 'UserController');
+Route::resource('users', 'UserController');
+Route::get('/', 'UserController@index')->name('users.index');
+Route::get('/users', 'UserController@create')->name('users.create');
+Route::post('/users', 'UserController@store')->name('users.store');
+Route::get('/users/{user}', 'UserController@edit')->name('users.edit');
+Route::post('/users/{user}', 'UserController@update')->name('users.update');
+
+// Route::post('/users/{user}', 'UserController@confirm')->name('users.confirm');

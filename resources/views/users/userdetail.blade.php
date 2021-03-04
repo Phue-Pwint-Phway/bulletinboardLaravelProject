@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login_Page_Design</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <script src="{{ asset('/js/app.js') }}"></script>
-    <link href="{{ asset('/css/user_detail.css') }}" rel="stylesheet">
-</head>
-<body>
+
     {{-- user-detail --}}
     <div class="container">
         <form action="">
@@ -83,5 +73,3 @@
             </div>
         </form>
     </div>
-</body>
-</html>
