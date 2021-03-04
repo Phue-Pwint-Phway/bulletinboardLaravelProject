@@ -28,7 +28,7 @@
         </div>
         {{-- user-list --}}
         <div class="userlist-container">
-            <form action="">
+            <form action="{{ route('users.index') }}" method="POST">
                 <div class="row first">
                     <h3>User List</h3>
                 </div>
@@ -50,7 +50,7 @@
                             <button>Search</button>
                         </li>
                         <li>
-                            <button type="button" onclick="location.href='{{ url('/createuser') }}'">Add</button>
+                            <button type="button" onclick="location.href='{{ route('users.create') }}'">Add</button>
                         </li>
                     </ul>
                 </div>
@@ -65,42 +65,35 @@
                             <th>Address</th>
                             <th>Created Date</th>
                             <th>Updated Date</th>
-                            <th>Delete</th>
+                            <th colspan="2">Action</th>
                         </tr>
+                        @foreach ($users as $user)
                         <tr>
-                            <td><a href="">user1</a></td>
-                            <td>user1@gmail.com</td>
-                            <td>user1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>2/9/2019</td>
-                            <td>1/10/2019</td>
-                            <td><button>Delete</button></td>
+                            <td><a href="">{{ $user->name }}</a></td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->phone }}</td>
+                            <td>{{ $user->bod }}</td>
+                            <td>{{ $user->address }}</td>
+                            <td>{{ date('Y-m-d') }}</td>
+                            <td>{{ date('Y-m-d') }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                    {{-- <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a> --}}
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
                 <div class="row fouth">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">4</a></li>
-                          <li class="page-item"><a class="page-link" href="#">5</a></li>
-                          <li class="page-item"><a class="page-link" href="#">6</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        </ul>
-                    </nav>
+                    {!! $users->links() !!}
                 </div>
             </form>
         </div>

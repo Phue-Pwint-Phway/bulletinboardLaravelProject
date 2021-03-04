@@ -55,13 +55,13 @@ class PostController extends Controller
     {
         //
         $request->validate([
-            'title' => 'required|unique:table',
+            'title' => 'required',
             'description' => 'required',
         ]);
 
         Post::create($request->all());
 
-        return redirect()->route('posts.postlist')
+        return redirect()->route('posts.index')
                         ->with('success', 'Posts created successfully');
 
     }
@@ -100,7 +100,7 @@ class PostController extends Controller
     {
         //
         $request->validate([
-            'title' => 'required|unique:table',
+            'title' => 'required',
             'description' => 'required',
         ]);
 
@@ -118,10 +118,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
-        // $post->delete();
+        $post->delete();
 
-        // return redirect()->route('posts.postlist')
-        //                 ->with('success', 'Post deleted successfully');
+        return redirect()->route('posts.index')
+                        ->with('success', 'Post deleted successfully');
     }
 }
