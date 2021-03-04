@@ -69,7 +69,7 @@
                         </tr>
                         @foreach ($users as $user)
                         <tr>
-                            <td><a href="">{{ $user->name }}</a></td>
+                            <td><a href="{{ route('users.show',$user->name) }}">{{ $user->name }}</a></td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->phone }}</td>
@@ -82,7 +82,7 @@
                             </td>
                             <td>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">
-                                    {{-- <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a> --}}
+                                    <a class="btn btn-info" href="{{ route('blogs.show',$blog->title) }}">Show</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>

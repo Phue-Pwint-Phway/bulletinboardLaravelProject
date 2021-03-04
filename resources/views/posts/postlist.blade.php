@@ -63,7 +63,7 @@
                         </tr>
                         @foreach ($posts as $post)
                         <tr>
-                            <td><a href="">{{ $post->title }}</a></td>
+                            <td><a href="{{ route('posts.show',$post->title) }}">{{ $post->title }}</a></td>
                             <td>{{ $post->description }}</td>
                             <td>{{ $post->id }}</td>
                             <td>{{ date('Y-m-d') }}</td>

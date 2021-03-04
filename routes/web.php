@@ -25,16 +25,18 @@ Route::post('/posts', 'PostController@store')->name('posts.store');
 Route::get('/posts/{post}', 'PostController@edit')->name('posts.edit');
 Route::post('/posts/{post}', 'PostController@update')->name('posts.update');
 Route::delete('/posts/{post}', 'PostController@destroy')->name('posts.destroy');
+Route::get('/posts', 'PostController@show')->name('posts.show');
 
 // Route::post('/posts', 'PostController@confirm')->name('posts.confirm');
 
 // user
 Route::resource('users', 'UserController');
-// Route::get('/', 'UserController@index')->name('users.index');
+Route::get('/', 'UserController@index')->name('users.index');
 Route::get('/users', 'UserController@create')->name('users.create');
 Route::post('/users', 'UserController@store')->name('users.store');
 Route::get('/users/{user}', 'UserController@edit')->name('users.edit');
 Route::post('/users/{user}', 'UserController@update')->name('users.update');
-Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy')
+Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
+Route::get('/posts', 'UserController@show')->name('users.show');
 
 // Route::post('/users/{user}', 'UserController@confirm')->name('users.confirm');
