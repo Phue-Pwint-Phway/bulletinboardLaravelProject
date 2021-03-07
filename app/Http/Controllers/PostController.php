@@ -124,4 +124,29 @@ class PostController extends Controller
         return redirect()->route('posts.index')
                         ->with('success', 'Post deleted successfully');
     }
+
+    public function exportIntoCSV()
+    {
+        return Excel::download(new csvExport, 'post.csv');
+    }
+
+    public function getAllCsv()
+    {
+        $csv = Post::all();
+        return view('uploadpost', compact('csv'));
+    }
+    public function downloadPDF(){
+        $csv = Post::all();
+        $pdf = PDF:loadView('uploadpost', compact('csv'));
+        return $pdf->download('csv.pdf');
+    }
+    public function importCsv()
+    {
+        return view('uploadpost');
+    }
+    public function import(Request $request)
+    {
+        Excel::import(new csvimport, $request->file);
+        return redirect('getallcsv')
+    }
 }

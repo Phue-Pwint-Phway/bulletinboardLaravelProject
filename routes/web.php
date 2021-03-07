@@ -40,3 +40,9 @@ Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
 Route::get('/posts', 'UserController@show')->name('users.show');
 
 // Route::post('/users/{user}', 'UserController@confirm')->name('users.confirm');
+
+Route::get('/exportcsv', 'PostController@exportIntoCSV');
+Route::get('/getallcsv', 'PostController@getAllCsv');
+Route::get('/download', 'PostController@downloadPDF');
+Route::get('/importcsv', 'PostController@importCsv');
+Route::post('/import', 'PostController@import')->name('import');
